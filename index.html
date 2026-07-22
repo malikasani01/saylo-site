@@ -7,6 +7,8 @@
 <meta name="description" content="Saylo is a calm AI companion for the messages that are hard to word. Draft replies that sound like you. Now in early beta, free to join.">
 <meta property="og:title" content="Saylo, the calm way to say what you mean">
 <meta property="og:description" content="A calm companion for the messages that are hard to word. Now in early beta.">
+<meta property="og:image" content="https://malikasani01.github.io/saylo-site/img/home.png">
+<meta name="theme-color" content="#F7F2E7">
 <style>
   :root{
     --cream:#F7F2E7; --surface:#FFFFFF; --sand:#F0EBDD; --ink:#2E2C25; --soft:#6B6656;
@@ -20,6 +22,7 @@
     line-height:1.6;-webkit-font-smoothing:antialiased}
   .serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-0.5px}
   a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
   .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 
   /* header */
@@ -37,47 +40,33 @@
   .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
   .btn.ghost:hover{background:var(--sand)}
 
+  /* device frame */
+  .device{background:#2E2C25;border-radius:42px;padding:9px;
+    box-shadow:0 26px 54px rgba(46,44,37,0.22);flex:0 0 auto}
+  .device img{border-radius:33px;width:100%}
+  .device.hero-device{width:290px}
+
   /* hero */
-  .hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;
-    padding:70px 0 40px}
+  .hero{display:grid;grid-template-columns:1.05fr 0.95fr;gap:44px;align-items:center;padding:70px 0 44px}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--sage-fill);color:var(--sage);
     font-weight:600;font-size:13px;padding:6px 12px;border-radius:999px;margin-bottom:20px}
   h1.hero-title{font-size:52px;line-height:1.08;margin-bottom:18px}
   .hero-sub{font-size:19px;color:var(--soft);max-width:30em;margin-bottom:28px}
   .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .cta-note{color:var(--muted);font-size:14px;margin-top:14px}
-
-  /* phone */
   .phone-col{display:flex;justify-content:center}
-  .phone{width:290px;height:590px;background:#2E2C25;border-radius:44px;padding:11px;
-    box-shadow:0 30px 60px rgba(46,44,37,0.22);position:relative}
-  .phone::before{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);
-    width:110px;height:26px;background:#2E2C25;border-radius:0 0 16px 16px;z-index:3}
-  .screen{width:100%;height:100%;background:var(--cream);border-radius:34px;overflow:hidden;
-    padding:26px 18px 0;position:relative}
-  .s-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-  .s-avatar{width:40px;height:40px;border-radius:50%;background:var(--sand);display:flex;align-items:center;
-    justify-content:center;color:var(--soft);font-weight:700}
-  .s-greet{color:var(--soft);font-size:14px}
-  .s-h1{font-size:26px;margin:2px 0 18px}
-  .s-hero{background:var(--sage);color:#fff;border-radius:18px;padding:18px;position:relative;margin-bottom:14px}
-  .s-hero b{font-size:16px} .s-hero p{font-size:12.5px;opacity:.9;margin-top:3px}
-  .s-hero .bubble{position:absolute;right:16px;top:50%;transform:translateY(-50%);width:44px;height:44px;
-    border-radius:50%;background:rgba(255,255,255,0.18)}
-  .s-mini{display:flex;gap:10px;margin-bottom:16px}
-  .s-card{flex:1;background:#fff;border-radius:16px;padding:12px;box-shadow:0 4px 14px rgba(46,44,37,0.05)}
-  .s-dot{width:30px;height:30px;border-radius:50%;margin-bottom:8px}
-  .s-card b{font-size:12.5px;display:block} .s-card span{font-size:11px;color:var(--muted)}
-  .s-label{font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px}
-  .s-people{background:#fff;border-radius:16px;box-shadow:0 4px 14px rgba(46,44,37,0.05)}
-  .s-person{display:flex;align-items:center;gap:10px;padding:11px 12px;border-top:1px solid var(--line)}
-  .s-person:first-child{border-top:none}
-  .s-person .pa{width:34px;height:34px;border-radius:50%;background:var(--sand)}
-  .s-person b{font-size:13px} .s-person span{font-size:11px;color:var(--muted)}
+
+  /* screenshot gallery */
+  .gallery{display:flex;gap:26px;overflow-x:auto;padding:8px 22px 26px;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch}
+  .gallery::-webkit-scrollbar{height:0}
+  .shot{scroll-snap-align:center;width:236px;flex:0 0 auto}
+  .shot .device{width:236px}
+  .shot p{color:var(--soft);font-size:14px;margin-top:14px;text-align:center;max-width:236px}
 
   /* sections */
   section.band{padding:66px 0}
-  .sec-head{text-align:center;max-width:34em;margin:0 auto 44px}
+  .sec-head{text-align:center;max-width:34em;margin:0 auto 40px}
   .sec-head h2{font-size:36px;margin-bottom:12px}
   .sec-head p{color:var(--soft);font-size:18px}
   .features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -137,27 +126,27 @@
       <p class="cta-note">Free during the beta. iPhone only for now.</p>
     </div>
     <div class="phone-col">
-      <div class="phone"><div class="screen">
-        <div class="s-row">
-          <div class="s-avatar">M</div>
-          <div class="s-greet">Good evening 👋</div>
-        </div>
-        <div class="s-h1 serif">How can I help you?</div>
-        <div class="s-hero"><b>Reply to a message</b><p>Get help replying to any message</p><span class="bubble"></span></div>
-        <div class="s-mini">
-          <div class="s-card"><div class="s-dot" style="background:var(--sand)"></div><b>Start a message</b><span>Write a new text</span></div>
-          <div class="s-card"><div class="s-dot" style="background:var(--sage-fill)"></div><b>Analyze</b><span>Read the tone</span></div>
-        </div>
-        <div class="s-label">People</div>
-        <div class="s-people">
-          <div class="s-person"><span class="pa"></span><div><b>Justin</b><br><span>❤️ Husband</span></div></div>
-          <div class="s-person"><span class="pa"></span><div><b>Sarah</b><br><span>👩‍💼 Manager</span></div></div>
-        </div>
-      </div></div>
+      <div class="device hero-device"><img src="img/home.png" alt="The Saylo home screen, asking How can I help you, with options to reply to a message, start a message, or analyze."></div>
     </div>
   </section>
+</main>
 
-  <section class="band" id="how">
+<section class="band" id="how" style="padding-bottom:34px">
+  <div class="wrap sec-head">
+    <h2 class="serif">See Saylo in action.</h2>
+    <p>A quiet, guided space that takes you from a messy thought to a message you feel good about sending.</p>
+  </div>
+  <div class="gallery">
+    <div class="shot"><div class="device"><img src="img/start.png" alt="Start a message screen with a note typed in a mix of French and English."></div><p>Just say what you need, however it comes out, in any language.</p></div>
+    <div class="shot"><div class="device"><img src="img/craft.png" alt="Craft your message screen with a drafted reply and tone controls."></div><p>Tune the tone and length until it sounds like you.</p></div>
+    <div class="shot"><div class="device"><img src="img/preflight.png" alt="Pre-flight check screen confirming clarity, tone, and that the message is ready to send."></div><p>A calm pre-flight check before you hit send.</p></div>
+    <div class="shot"><div class="device"><img src="img/people.png" alt="People screen listing saved contacts with their relationship to you."></div><p>It learns the people you message most.</p></div>
+    <div class="shot"><div class="device"><img src="img/allset.png" alt="All set screen confirming the message was copied, with a warm illustration."></div><p>Sent with a little more ease. You've got this.</p></div>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="band" style="padding-top:20px">
     <div class="sec-head">
       <h2 class="serif">For the messages you rewrite five times.</h2>
       <p>The reply you are not sure how to phrase. A note to your manager. A boundary with family. Saylo helps you send it with confidence.</p>
@@ -168,18 +157,19 @@
       <div class="feature"><div class="fi t">🔍</div><h3>Understand what they meant</h3><p>Analyze a confusing message to read its tone, urgency, and what is really being asked.</p></div>
       <div class="feature"><div class="fi">📲</div><h3>Share to Saylo</h3><p>Share a text or screenshot from any app, and Saylo opens ready to help you respond.</p></div>
       <div class="feature"><div class="fi t">🌱</div><h3>It learns your people</h3><p>Save the people you message most, so every reply fits how you talk with each of them.</p></div>
-      <div class="feature"><div class="fi">🕊️</div><h3>Calm by design</h3><p>No noise, no pressure. Just a quiet space to find the right words.</p></div>
+      <div class="feature"><div class="fi">🎙️</div><h3>Speak, don't type</h3><p>Talk it out and Saylo turns your voice into text, in whatever language you speak.</p></div>
     </div>
   </section>
 
-  <section class="band" id="join" style="padding-top:20px">
+  <section class="band" id="join" style="padding-top:6px">
     <div class="beta">
       <h2 class="serif">Be an early tester.</h2>
       <p>Help shape Saylo and use it free during the beta. It takes about two minutes to join.</p>
-      <a class="btn" href="mailto:hello@malikasani.com?subject=Saylo%20beta&body=Hi%20Malika%2C%20I%27d%20love%20to%20try%20the%20Saylo%20beta.">Request beta access</a>
+      <!-- BETA CTA: swap this href to the public TestFlight link once Apple approves External Testing -->
+      <a class="btn" href="mailto:hello@malikasani.com?subject=Saylo%20beta%20access&body=Hi%20Malika%2C%20I%27d%20love%20to%20try%20the%20Saylo%20beta.%20Here%27s%20the%20Apple%20ID%20email%20on%20my%20iPhone%3A%20">Request beta access</a>
       <div class="steps">
-        <div class="step"><div class="n">1</div><b>Install TestFlight</b><span>Apple's free app for trying betas, from the App Store.</span></div>
-        <div class="step"><div class="n">2</div><b>Open the invite</b><span>Tap the invite link on your iPhone and press Install.</span></div>
+        <div class="step"><div class="n">1</div><b>Request access</b><span>Tap the button and we'll send your personal invite.</span></div>
+        <div class="step"><div class="n">2</div><b>Install TestFlight</b><span>Apple's free app for trying betas. One tap installs Saylo.</span></div>
         <div class="step"><div class="n">3</div><b>Start with Saylo</b><span>Craft your first message, and tell us what you think.</span></div>
       </div>
     </div>
